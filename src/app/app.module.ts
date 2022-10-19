@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CounterModule } from './counter/counter.module';
+import { FormModule } from './form/form.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, CounterModule],
+  imports: [BrowserModule, CounterModule, FormModule],
   providers: [],
   bootstrap: [AppComponent],
 })
