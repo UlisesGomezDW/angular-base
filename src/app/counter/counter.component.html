@@ -1,0 +1,14 @@
+<h1>{{ title }}</h1>
+<span>{{ number }}</span>
+<div>
+  <button (click)="sum()">+</button>
+  <button (click)="reduce()">-</button>
+</div>
+<ul>
+  <li *ngFor="let name of names">{{ name }}</li>
+</ul>
+<span *ngIf="visible; else notVisible">Visible 🐶</span>
+
+<ng-template #notVisible> No visible </ng-template>
+
+<button (click)="toggle()">{{ visible ? "si" : "No" }}</button>
