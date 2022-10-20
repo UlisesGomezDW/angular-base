@@ -7,10 +7,5 @@ import { Info } from './app.types';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title: string = 'Counter';
-  data: Info[] = [];
-
-  addItem(event: Info) {
-    this.data.push(event);
-  }
+  title: string = 'App';
 }

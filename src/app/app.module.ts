@@ -2,13 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CounterModule } from './counter/counter.module';
-import { FormModule } from './form/form.module';
-import { CardsModule } from './cards/cards.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, CounterModule, FormModule, CardsModule],
+  imports: [BrowserModule, UsersModule],
   providers: [],
   bootstrap: [AppComponent],
 })
