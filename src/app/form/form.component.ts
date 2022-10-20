@@ -1,8 +1,5 @@
-import { Component } from '@angular/core';
-
-interface People {
-  name: string;
-}
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Info } from '../app.types';
 
 @Component({
   selector: 'app-form',
@@ -10,11 +7,16 @@ interface People {
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent {
-  people: People = {
+  @Output() onChange: EventEmitter<Info> = new EventEmitter();
+
+  people: Info = {
     name: '',
   };
 
   add() {
-    console.log(this.people);
+    this.onChange.emit(this.people);
+    this.people = {
+      name: '',
+    };
   }
 }
