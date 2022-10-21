@@ -1,0 +1,6 @@
+<section class="layout-screen flex-column-c">
+    <h1 class="home-title">Steps</h1>
+    <div class="home-card-list flex-row-c">
+        <a *ngFor="let path of paths" routerLink="{{ path.path }}" class="home-card flex-column-c">{{ path.name }}</a>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+.home-card {
+    width: 200px;
+    height: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 6px #0a101426, 0 0 52px #0a10141f;
+    margin-right: 20px;
+}
+.home-card:last-child {
+    margin-right: 0;
+}
+.home-card-list {
+    width: 100%;
+}
+.home-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
