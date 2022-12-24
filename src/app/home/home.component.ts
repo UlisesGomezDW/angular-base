@@ -13,6 +13,6 @@ interface Path {
 export class HomeComponent {
     paths: Path[] = [
         { name: "Basic", path: "basic" },
-        { name: "Mid", path: "gifs" },
+        { name: "Roga", path: "roga" },
     ]
 }

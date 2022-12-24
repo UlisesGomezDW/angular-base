@@ -1,1 +1,20 @@
-<div class="input"></div>
+<div class="input" (click)="handleOpen(input)">
+    <p
+        class="input-label"
+        [ngClass]="{
+            'input-label--opened': visible
+        }"
+    >
+        {{ placeholder }}
+    </p>
+    <input
+        #input
+        name="{{ name }}"
+        ng-model="name"
+        class="input-base"
+        [ngClass]="{
+            'input-base--visible': visible
+        }"
+        (blur)="handleClose($event)"
+    />
+</div>

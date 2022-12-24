@@ -1,5 +1,11 @@
-<div>
-    <div></div>
-    <p>Random text</p>
-    <app-input></app-input>
-</div>
+<section class="roga-screen">
+    <section class="roga-head"></section>
+    <form class="roga-form" (ngSubmit)="handle()">
+        <h1 class="roga-title">Queremos saber de ti</h1>
+        <p class="roga-desc">Para iniciar con tu solicitud de crédito RogaPay necesitamos conocerte un poco más.</p>
+
+        <app-input [placeholder]="'Nombre'" [name]="'name'"></app-input>
+
+        <button class="roga-btn" type="submit">Continuar</button>
+    </form>
+</section>
