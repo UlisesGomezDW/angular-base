@@ -1,4 +1,5 @@
 import { Component } from "@angular/core"
+import { NgForm } from "@angular/forms"
 
 type Data = {
     name: string
@@ -10,11 +11,7 @@ type Data = {
     styleUrls: ["./roga.component.css"],
 })
 export class RogaComponent {
-    data: Data = {
-        name: "",
-    }
-
-    handle() {
-        console.log(this.data)
+    handle(e: NgForm) {
+        console.log(e.value)
     }
 }
