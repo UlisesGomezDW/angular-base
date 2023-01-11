@@ -9,7 +9,9 @@
     </p>
     <input
         #input
-        name="{{ name }}"
+        [formControl]="control"
+        [type]="type"
+        [required]="required"
         class="input-base"
         [ngClass]="{
             'input-base--visible': visible

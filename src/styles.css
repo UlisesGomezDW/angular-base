@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+
 * {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Cabin", Helvetica, sans-serif;
     font-weight: 200;
     box-sizing: border-box;
 }
@@ -11,7 +13,7 @@ body {
     -webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
-    overflow-y: hidden;
+    overflow-x: hidden;
     height: 100%;
     width: 100%;
 }

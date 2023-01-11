@@ -1,13 +1,39 @@
 <section class="roga-screen">
     <section class="roga-head"></section>
-    <form #f="ngForm" class="roga-form" (ngSubmit)="handle(f)">
+    <form #f="ngForm" [formGroup]="formData" class="roga-form" (ngSubmit)="handle(f)">
         <h1 class="roga-title">Queremos saber de ti</h1>
         <p class="roga-desc">Para iniciar con tu solicitud de crédito RogaPay necesitamos conocerte un poco más.</p>
 
-        <app-input [placeholder]="'Nombre'" [name]="'name'" ngModel></app-input>
-        <app-input [placeholder]="'Apellido Paterno'" [name]="'firstName'" ngModel></app-input>
-        <input name="lastName" placeholder="Apellido" ngModel />
-
+        <app-input
+            class="roga-input"
+            [placeholder]="'Nombre'"
+            [type]="'text'"
+            [control]="$any(formData.get('name'))"
+        ></app-input>
+        <app-input
+            class="roga-input"
+            [placeholder]="'Apellido Paterno'"
+            [type]="'text'"
+            [control]="$any(formData.get('firstName'))"
+        ></app-input>
+        <app-input
+            class="roga-input"
+            [placeholder]="'Apellido Materno'"
+            [type]="'text'"
+            [control]="$any(formData.get('lastName'))"
+        ></app-input>
+        <app-input
+            class="roga-input"
+            [placeholder]="'E-mail'"
+            [type]="'email'"
+            [control]="$any(formData.get('email'))"
+        ></app-input>
+        <app-input
+            class="roga-input"
+            [placeholder]="'Fecha de nacimiento'"
+            [type]="'date'"
+            [control]="$any(formData.get('birthDate'))"
+        ></app-input>
         <button class="roga-btn" type="submit">Continuar</button>
     </form>
 </section>
