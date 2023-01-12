@@ -34,6 +34,12 @@
             [type]="'date'"
             [control]="$any(formData.get('birthDate'))"
         ></app-input>
+        <app-select
+            class="roga-select"
+            [placeholder]="'Ocupación'"
+            [control]="$any(formData.get('occupation'))"
+            [options]="options"
+        ></app-select>
         <button class="roga-btn" type="submit">Continuar</button>
     </form>
 </section>

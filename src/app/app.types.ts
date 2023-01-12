@@ -1,3 +1,7 @@
 export interface Info {
-  name: string;
+    name: string
+}
+export type Option = {
+    label: string
+    value: string
 }

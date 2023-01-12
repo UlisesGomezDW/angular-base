@@ -1,0 +1,29 @@
+<div class="select">
+    <div class="select-box" (click)="handleOpen(input)">
+        <div class="select-base">
+            <p
+                class="select-label"
+                [ngClass]="{
+                    'select-label--opened': visible
+                }"
+            >
+                {{ placeholder }}
+            </p>
+            <input
+                #input
+                [formControl]="control"
+                class="select-input"
+                [ngClass]="{
+                    'select-input--visible': visible
+                }"
+                (blur)="handleClose()"
+            />
+        </div>
+        <div class="select-indicator"></div>
+    </div>
+    <div *ngIf="open" class="select-dropdown">
+        <div *ngFor="let option of options" class="select-item" (click)="handleSelect(option.value)">
+            {{ option.label }}
+        </div>
+    </div>
+</div>
