@@ -1,5 +1,7 @@
 <section class="roga-screen">
-    <section class="roga-head"></section>
+    <section class="roga-head">
+        <img src="/assets/logo.png" width="176" alt="logo" />
+    </section>
     <form #f="ngForm" [formGroup]="formData" class="roga-form" (ngSubmit)="handle(f)">
         <h1 class="roga-title">Queremos saber de ti</h1>
         <p class="roga-desc">Para iniciar con tu solicitud de crédito RogaPay necesitamos conocerte un poco más.</p>
@@ -40,6 +42,72 @@
             [control]="$any(formData.get('occupation'))"
             [options]="options"
         ></app-select>
-        <button class="roga-btn" type="submit">Continuar</button>
+        <p class="roga-check-label">Género</p>
+        <div class="roga-check-group">
+            <app-check
+                [value]="formData.get('gender')?.value === 'F'"
+                [type]="'circle'"
+                [label]="'Femenino'"
+                (change)="changeCheck('F')"
+            ></app-check>
+            <app-check
+                [value]="formData.get('gender')?.value === 'M'"
+                [type]="'circle'"
+                [label]="'Masculino'"
+                (change)="changeCheck('M')"
+            ></app-check>
+        </div>
+        <h2 class="roga-address-title">Domicilio</h2>
+        <div class="roga-list" *ngFor="let item of list">
+            <div class="roga-list-item">
+                <app-check
+                    [type]="'circle'"
+                    [value]="address === item.value"
+                    [label]="item.label"
+                    (change)="handleSelectAddress(item.value)"
+                ></app-check>
+            </div>
+            <div class="roga-list-area" *ngIf="address === item.value">
+                <app-input
+                    class="roga-input"
+                    [placeholder]="'Código postal'"
+                    [control]="$any(formData.get('postalCode'))"
+                ></app-input>
+                <app-input
+                    class="roga-input"
+                    [placeholder]="'Calle y número de casa'"
+                    [control]="$any(formData.get('street'))"
+                ></app-input>
+                <app-input
+                    class="roga-input"
+                    [placeholder]="'Dirección 2 (Colonia)'"
+                    [control]="$any(formData.get('cologne'))"
+                ></app-input>
+                <app-select
+                    class="roga-select"
+                    [placeholder]="'País/región'"
+                    [control]="$any(formData.get('country'))"
+                    [options]="countryList"
+                ></app-select>
+                <app-input
+                    class="roga-input"
+                    [placeholder]="'Ciudad'"
+                    [control]="$any(formData.get('city'))"
+                ></app-input>
+                <app-select
+                    class="roga-select"
+                    [placeholder]="'Estado'"
+                    [control]="$any(formData.get('state'))"
+                    [options]="stateList"
+                ></app-select>
+            </div>
+        </div>
+        <app-check
+            class="roga-address-check"
+            [value]="formData.get('accept')?.value"
+            [label]="'Acepto términos y condiciones y privacidad de datos'"
+            (change)="changeAccept($event)"
+        ></app-check>
+        <button [disabled]="!f.form.valid" class="roga-btn" type="submit">Continuar</button>
     </form>
 </section>

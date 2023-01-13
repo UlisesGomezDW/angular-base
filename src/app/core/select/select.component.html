@@ -19,10 +19,17 @@
                 (blur)="handleClose()"
             />
         </div>
-        <div class="select-indicator"></div>
+        <div class="select-indicator">
+            <div
+                class="select-triangule"
+                [ngClass]="{
+                    'select-triangule--open': open
+                }"
+            ></div>
+        </div>
     </div>
     <div *ngIf="open" class="select-dropdown">
-        <div *ngFor="let option of options" class="select-item" (click)="handleSelect(option.value)">
+        <div *ngFor="let option of options" class="select-item" (click)="handleSelect(option.label)">
             {{ option.label }}
         </div>
     </div>

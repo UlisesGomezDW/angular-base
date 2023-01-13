@@ -1,0 +1,14 @@
+<div class="checkbox">
+    <div
+        class="check"
+        [ngClass]="{
+            'check-circle': type === 'circle',
+            'check-box': type === 'box',
+            'check--active': value
+        }"
+        (click)="toggle()"
+    >
+        <div class="check-circle-dot"></div>
+    </div>
+    <p class="check-label">{{ label }}</p>
+</div>
