@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core"
 import { FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective } from "@angular/forms"
-import { Option } from "../app.types"
+import { Option, Data } from "../app.types"
+import { RogaService } from "./services/roga.service"
 
 type List = {
     label: string
@@ -17,7 +18,7 @@ export class RogaComponent implements OnInit {
     public formData: FormGroup = new FormGroup({})
     address: "local" | "other" = "local"
 
-    constructor(private builder: FormBuilder) {}
+    constructor(private builder: FormBuilder, private rogaService: RogaService) {}
 
     list: List[] = [
         { label: "La misma dirección de envío", value: "local" },
@@ -65,8 +66,10 @@ export class RogaComponent implements OnInit {
     }
 
     handle(e: FormGroupDirective) {
-        alert("Datos registrados!")
-        console.log(e.form.value)
+        const data: Data = e.form.value
+        this.rogaService.addItem({
+            name: data.name,
+        })
     }
 
     changeCheck(key: string) {
