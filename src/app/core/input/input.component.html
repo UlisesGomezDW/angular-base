@@ -1,4 +1,10 @@
-<div class="input" (click)="handleOpen(input)">
+<div
+    class="input"
+    [ngClass]="{
+        'input--error': error
+    }"
+    (click)="handleOpen(input)"
+>
     <p
         class="input-label"
         [ngClass]="{

@@ -11,6 +11,7 @@ export class InputComponent implements OnInit {
     @Input() control: FormControl = new FormControl()
     @Input() type: string = "text"
     @Input() required: boolean = false
+    @Input() error: boolean = false
 
     visible: boolean = false
 

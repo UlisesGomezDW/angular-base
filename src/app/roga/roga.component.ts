@@ -51,11 +51,15 @@ export class RogaComponent implements OnInit {
             name: new FormControl("", [Validators.required]),
             firstName: new FormControl("", [Validators.required]),
             lastName: new FormControl("", [Validators.required]),
-            email: new FormControl("", [Validators.required]),
+            email: new FormControl("", [Validators.required, Validators.email]),
             birthDate: new FormControl("", [Validators.required]),
             occupation: new FormControl("", [Validators.required]),
             gender: new FormControl("F", [Validators.required]),
-            postalCode: new FormControl("", [Validators.required]),
+            postalCode: new FormControl("", [
+                Validators.required,
+                Validators.pattern("^\\d+$"),
+                Validators.minLength(5),
+            ]),
             street: new FormControl("", [Validators.required]),
             cologne: new FormControl("", [Validators.required]),
             country: new FormControl("", [Validators.required]),
@@ -63,6 +67,10 @@ export class RogaComponent implements OnInit {
             state: new FormControl("", [Validators.required]),
             accept: new FormControl(false, [Validators.required, Validators.requiredTrue]),
         })
+    }
+
+    get postalCode() {
+        return this.formData.get("postalCode")
     }
 
     handle(e: FormGroupDirective) {

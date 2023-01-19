@@ -71,6 +71,8 @@
                 <app-input
                     class="roga-input"
                     [placeholder]="'Código postal'"
+                    [type]="'number'"
+                    [error]="!!postalCode?.invalid"
                     [control]="$any(formData.get('postalCode'))"
                 ></app-input>
                 <app-input
